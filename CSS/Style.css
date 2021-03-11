@@ -233,6 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   #hero .container{
     padding-top: 450px;
     text-align: center;
+    height:auto;
   }
   #hero h1 {
     padding-top: 10px;
