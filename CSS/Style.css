@@ -1,0 +1,548 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+html {
+    scroll-behavior: smooth; /*to navigate smoothly to the section u choose*/
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #b6b0b0;
+}
+
+a {
+  color: #b6b0b0;
+}
+
+a:hover {
+  color: #35f1f1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+/*--------------------------------------------------------------
+# Top Bar section
+--------------------------------------------------------------*/
+#header{
+  transition: all 0.5s;
+}
+#header.header-scrolled{
+  background: rgba(0, 0, 0, 0.8);
+}
+#header .logo{
+  font-size: 60px;
+  color: #35f1f1;
+}
+#header .icon-box i {
+  font-size: 25px;
+  color: #fff;
+}
+#header .icon-box i:hover{
+  color: #35f1f1;
+}
+@media (max-width: 768px) {
+  #header .logo {
+    font-size: 50px;
+    margin-left:5px;
+  }
+  #header .icon-box i{
+    display: none;
+  }
+}
+/*----------------------------------Navigation-------------------------------------------------*/
+.nav-menu ul{
+  list-style: none;
+  margin-left: 150px;
+  margin-top: 10px;
+  display: flex;
+}
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: #fff;
+  transition: 0.3s;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+}
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: #35f1f1;
+}
+/*----------------------------Mobile Navigation-----------------------------------*/
+.mobile-nav-toggle {
+  position: fixed;
+  top: 20px;
+  right: 15px;
+  z-index: 9998;/*z-index should be greater than the element after it to be shown first*/
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+.mobile-nav-toggle i { /*color of mobile nav toggle*/
+  color: #fff;
+}
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
+.mobile-nav {
+  position: fixed;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #fff;
+  transition: ease-in-out 0.2s;
+  opacity: 0; visibility: hidden; /* until adding this class opacity:1 and visibilty will be visible*/
+  border-radius: 10px;
+  padding: 10px 0;
+}
+.mobile-nav-active {
+  overflow: hidden;
+}
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #151515;
+  padding: 10px 20px;
+  font-weight: 500;
+  outline: none;
+}
+.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+  color: #151515;
+  text-decoration: none;
+  background: #35f1f1;
+}
+.mobile-nav-overly { /*the nav menu which show and hide with toggle and close icons*/
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  display: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.2s;
+}
+/*----------------------------BuyNow Button-----------------------------------*/
+.Buy-Now-btn {
+  color: #fff;
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 7px 40px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 18px;
+  display: inline-block;
+  border: 2px solid #35f1f1;
+}
+.Buy-Now-btn:hover {
+  color: #35f1f1;
+}
+@media (max-width: 768px) {
+  .Buy-Now-btn {
+    display: none;
+  }
+}
+/*------------------------------------------------------------------------------------
+# Hero Section
+-------------------------------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../Images/hero-bg.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero .container {
+  position: relative;
+  padding-top: 400px;
+  text-align: left;
+}
+#hero h1 {
+  margin:5px;
+  font-size: 50px;
+  line-height: 60px;
+  color: rgba(255, 255, 255, 0.9);
+}
+#hero h2 {
+  color: #35f1f1;
+  margin: 7px;
+  font-size: 50px;
+  line-height: 60px;
+}
+#hero span{
+  color: rgba(255, 255, 255, 0.9);
+  margin: 7px;
+  font-size: 20px;
+  line-height: 60px;
+}
+.Shop-Now-btn {
+  color: #fff;
+  border-radius: 50px;
+  background-color: transparent;
+  margin-top: 10px;
+  padding: 7px 50px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 22px;
+  display: inline-block;
+  border: 2px solid #fff;
+}
+.Shop-Now-btn:hover {
+  color: #35f1f1;
+}
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #hero .container{
+    padding-top: 450px;
+    text-align: center;
+  }
+  #hero h1 {
+    padding-top: 10px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    padding-top: 10px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  #hero span{
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  #hero .Shop-Now-btn{
+    margin-top: 20px;
+  }
+}
+/*------------------------------------------------------------------------------------
+Features section
+---------------------------------------------------------------------------------------*/
+#features{
+  width: 100%;
+  height: 100vh;
+  background-color:#fff;
+}
+#features h1{
+  color: #35f1f1;
+  margin-bottom: 70px;
+  font-size: 60px;
+  font-weight: lighter;
+}
+#features .icon-box {
+  padding: 30px 20px;
+  transition: ease-in-out 0.3s;
+  border: 1px solid #000;
+  height: 100%;
+  text-align: center;
+}
+@media (max-width: 768px){
+  #features{
+    margin-top:200px ;
+    margin-bottom: 200px;
+  }
+}
+#features .icon-box i {
+  font-size: 30px;
+  line-height: 1;
+  color: #000;
+}
+#features .icon-box i:hover{
+  color: #35f1f1;
+}
+#features .icon-box h3 {
+  font-weight: 600;
+  margin: 10px 0 0 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 18px;
+  line-height: 26px;
+}
+#features .icon-box h3 a {
+  color: #000;
+  transition: ease-in-out 0.3s;
+}
+#features .icon-box h3 a:hover {
+  color: #35f1f1;
+}
+#features .icon-box:hover {
+  border-color: #35f1f1;
+}
+/*-------------------------------------------------------------------------------------
+specifications Section
+---------------------------------------------------------------------------------------*/
+.Spec-Img-1{
+  background-image: url("../Images/1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+.Spec-Img-2{
+  background-image: url("../Images/2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+.Spec-Img-3{
+  background-image: url("../Images/6.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+.Spec-Img-4{
+  background-image: url("../Images/4.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+.Spec-Img-5{
+  background-image: url("../Images/5.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+.Spec-Cont{
+  text-align: left;
+  padding: 180px 50px;
+}
+.Spec-Cont h1{
+  color: #35f1f1;
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+.Spec-Cont span{
+  color: #151515;
+  opacity: 0.8;
+  font-size:17px;
+}
+/*--------------------------------------------------------------
+Gallary
+---------------------------------------------------------------*/
+#gallary{
+  margin-top: 50px;
+}
+#gallary h1{
+  color: #35f1f1;
+  font-size: 60px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+#gallary .gallery-item img {
+  transition: all ease-in-out 0.4s;
+  height: 300px;
+}
+@media (max-width:768px){
+  #gallary .gallery-item img{
+    display: block;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+/*-------------------------------------------------------------
+Contact
+---------------------------------------------------------------*/
+.contact{
+  width: 100%;
+  height: 100vh;
+  background-color: #35f1f1;
+}
+.contact h1{
+  font-size: 60px;
+  color: #fff;
+  font-weight: lighter;
+  padding-top:100px;
+  padding-bottom: 30px;
+}
+.contact .php-email-form button[type="submit"] {
+  background: transparent;
+  border: 2px solid #fff;
+  font-size: 20px;
+  padding: 10px 60px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+.contact .php-email-form button[type="submit"]:hover {
+  background: transparent;
+  color: #b6b0b0;
+}
+.contact .php-email-form {
+  width: 40%;
+}
+@media (max-width:768px){
+  .contact .php-email-form {
+    width: 60%;
+  }
+}
+.contact .php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .loading {
+  display: none;
+  text-align: center;
+  padding: 15px;
+}
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #cda45e;
+  border-top-color: #1a1814;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+.contact .php-email-form input{
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: none;
+  font-size: 18px;
+  background: #fff;
+  border-color: #fff;
+  color: #a49b89;;
+}
+.contact .php-email-form input::-webkit-input-placeholder{
+  color: #a49b89;
+}
+.contact .php-email-form input::-moz-placeholder{
+  color: #a49b89;
+}
+.contact .php-email-form input:-ms-input-placeholder{
+  color: #a49b89;
+}
+.contact .php-email-form input::-ms-input-placeholder{
+  color: #a49b89;
+}
+.contact .php-email-form input::placeholder{
+  color: #a49b89;
+}
+.contact .php-email-form input:focus{
+  border-color: #35f1f1;
+}
+.contact .php-email-form input {
+  height: 50px;
+  margin: 10px;
+}
+.contact h5{
+  color: #fff;
+  font-size: 18px;
+  padding-top: 50px;
+}
+.contact .social-links a {
+  font-size: 30px;
+  display: inline-block;
+  background: #fff;
+  color: #35f1f1;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  transition: 0.3s;
+}
+.contact .social-links a:hover {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+}
+.back-to-top i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background:#35f1f1;
+  color: #151515;
+  transition: all 0.4s;
+}
+.back-to-top i:hover {
+  background: #fff;
+  color: #35f1f1;
+}
+/*----------------------------------------------------------------------------*/
+.copyright {
+  font-size: 18px;
+  color: #fff;
+  background-color: #a49b89;
+  height: 50px;
+  text-align: center;
+}
